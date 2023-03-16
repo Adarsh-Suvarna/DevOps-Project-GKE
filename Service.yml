@@ -1,0 +1,14 @@
+kind: Service                             
+apiVersion: v1
+metadata:
+  name: adarsh
+  labels:
+    app: adarsh
+spec:
+  ports:
+    - port: 8000                               
+      targetPort: 8000                    
+      nodePort: 31200
+  selector:
+    app: adarsh                    
+  type: LoadBalancer                   

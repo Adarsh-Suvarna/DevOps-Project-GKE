@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: adarsh
+spec:
+   replicas: 2
+   selector:      # tells the controller which pods to watch/belong to
+    matchLabels:
+     app: adarsh
+   template:
+      metadata:
+        labels:
+          app: adarsh
+      spec:
+       containers:
+        - name: adarsh
+          image: adarshasuvarna/pipeline-demo
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8000
