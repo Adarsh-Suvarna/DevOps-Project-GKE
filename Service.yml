@@ -6,9 +6,9 @@ metadata:
     app: adarsh
 spec:
   ports:
-    - port: 8080                               
-      targetPort: 80                    
-      nodePort: 31200
+    - port: 8000                               
+      targetPort: 8000                    
+      nodePort: 8000
   selector:
     app: adarsh                    
   type: LoadBalancer                   
