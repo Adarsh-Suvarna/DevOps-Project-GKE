@@ -8,7 +8,7 @@ spec:
   ports:
     - port: 8000                               
       targetPort: 8000                    
-      nodePort: 8000
+      nodePort: 31200
   selector:
     app: adarsh                    
   type: LoadBalancer                   
