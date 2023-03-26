@@ -1,10 +1,9 @@
-# Deploy an Application to GKE(Google Kubernetes Engine) 
+# Deploy an Application to GKE (Google Kubernetes Engine) 
 ### Tech used:
-- Node.js
 - Docker
 - Kubernetes
-- GKE(Google Kubernetes Engine)
-- GCR(Google Container Registry)
+- GKE (Google Kubernetes Engine)
+- GCR (Google Container Registry)
 
 <p>
 <img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/docker.gif" height="36" width="36" >
@@ -12,13 +11,13 @@
 </p>
 
 # Steps
-- [x] Create a kubernetes cluster on GKE.
-- [x] Setup Connection to created GKE cluster in with your local machine or cloud shell.
+- Create a kubernetes cluster on GKE.
+- Setup Connection to created GKE cluster in with your local machine or cloud shell.
     ```sh
     gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
     ```
-- [x] Create a simple nodejs/express application.
-- [x] Write Dockerfile for the application
+- Create a simple nodejs/express application.
+- Write Dockerfile for the application
     ```Dockerfile
     FROM --platform=linux/amd64 node:14
     WORKDIR /usr/app
@@ -28,23 +27,23 @@
     EXPOSE 80
     CMD ["node","app.js"]
     ```
-- [x] Build the Docker image
+- Build the Docker image
     ```sh
     docker build -t us.gcr.io/<PROJECT_ID>/imagename:tag .
     ```
-- [x] Authenticate to GCR
+- Authenticate to GCR
     ```sh
     gcloud auth configure-docker
     ```
-- [x] Push docker image to GCR(Google Container Registry)
+- Push docker image to GCR(Google Container Registry)
     ```sh
     docker push us.gcr.io/<PROJECT_ID>/imagename:tag
     ```
-- [x] Test the application using docker.
+- Test the application using docker.
     ```sh
     docker run -d -p 3000:80 us.gcr.io/<PROJECT_ID>/imagename:tag
     ```
-- [x] Write kubernetes manifest file for deployment. ```deploy.yml```
+- Write kubernetes manifest file for deployment. ```deploy.yml```
     ```yml
     apiVersion: apps/v1
     kind: Deployment
@@ -72,7 +71,7 @@
               ports:
                 - containerPort: 80
     ```
-- [x] Write kubernetes manifest file for service. ```service.yml```
+- Write kubernetes manifest file for service. ```service.yml```
     ```yml
     kind: Service
     apiVersion: v1
@@ -87,23 +86,23 @@
         app: nodeapp  
       type: LoadBalancer
     ```
-- [x] Apply manifest file to create deployment.
+- Apply manifest file to create deployment.
     ```sh
     kubectl apply -f deploy.yml
     ```
-- [x] Check status of the deployment.
+- Check status of the deployment.
     ```sh
     kubectl get deploy
     ```
-- [x] Apply manifest file to create load balancer service.
+- Apply manifest file to create load balancer service.
     ```sh
     kubectl apply -f service.yml
     ```
-- [x] Check status of service.
+- Check status of service.
     ```sh
     kubectl get svc
     ```
-- [x] Check the external IP of the service in the browser.
+- Check the external IP of the service in the browser.
 
 ### Cleanup
 ```sh

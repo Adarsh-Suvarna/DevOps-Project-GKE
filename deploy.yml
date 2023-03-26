@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         - name: nodeappcontainer
-          image: us.gcr.io/learn-gcp-devops-adarsh/nodeapp:v1
+          image: us.gcr.io/learn-gcp-devops-adarsh/devops-project-1:v1
           ports:
             - containerPort: 80
