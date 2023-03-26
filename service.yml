@@ -10,4 +10,3 @@ spec:
   selector:
     type: backend
     app: devops-project-1
-  

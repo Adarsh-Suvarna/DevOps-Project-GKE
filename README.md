@@ -115,5 +115,3 @@
 kubectl delete -f deploy.yml
 kubectl delete -f service.yml
 ```
-
-> Delete your GKE Cluster from GCP Console.
