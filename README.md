@@ -16,16 +16,22 @@
     ```sh
     gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
     ```
-- Create a simple nodejs/express application.
 - Write Dockerfile for the application
     ```Dockerfile
-    FROM --platform=linux/amd64 node:14
-    WORKDIR /usr/app
-    COPY package.json .
-    RUN npm install
-    COPY . .
+    FROM  centos:latest
+    MAINTAINER adarshasuvarna@outlook.com
+    RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+    RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+    RUN yum install -y httpd \
+    zip\
+    unzip
+    ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
+    WORKDIR /var/www/html/
+    RUN unzip photogenic.zip
+    RUN cp -rvf photogenic/* .
+    RUN rm -rf photogenic photogenic.zip
+    CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
     EXPOSE 80
-    CMD ["node","app.js"]
     ```
 - Build the Docker image
     ```sh
@@ -48,22 +54,22 @@
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-      name:  nodeappdeployment
+      name:  devops-project-1-deployment
       labels:
         type: backend
-        app: nodeapp
+        app: devops-project-1
     spec:
       replicas: 1
       selector:
         matchLabels:
           type: backend
-          app: nodeapp
+          app: devops-project-1
       template:
         metadata:
-          name: nodeapppod
+          name: devops-project-1-pod
           labels:
             type: backend
-            app: nodeapp
+            app: devops-project-1
         spec:
           containers:
             - name: nodecontainer
@@ -76,14 +82,14 @@
     kind: Service
     apiVersion: v1
     metadata:
-      name: nodeapp-load-service
+      name: devops-project-1-load-service
     spec:
       ports:
         - port: 80 
           targetPort: 80
       selector:
         type: backend
-        app: nodeapp  
+        app: devops-project-1  
       type: LoadBalancer
     ```
 - Apply manifest file to create deployment.
