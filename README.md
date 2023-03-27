@@ -5,11 +5,6 @@
 - GKE (Google Kubernetes Engine)
 - GCR (Google Container Registry)
 
-<p>
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/docker.gif" height="36" width="36" >
-<img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/kubernetes.svg.png"  height="36" width="36" ><img src="https://raw.githubusercontent.com/tush-tr/tush-tr/master/res/social-icon-google-cloud-1200-630.png" height="36" >
-</p>
-
 # Steps
 - Create a kubernetes cluster on GKE.
 - Setup Connection to created GKE cluster in with your local machine or cloud shell.
