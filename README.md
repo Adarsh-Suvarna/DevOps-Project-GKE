@@ -26,9 +26,9 @@
     ```
 
     You will get above command easily by clicking on Connect button inside the GKE Cluster.
-      <p>
-  <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/connect.png">
-  </p>
+    <p>
+    <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/connect.png">
+    </p>
 - Write Dockerfile for the application
     ```Dockerfile
     FROM  centos:latest
@@ -58,6 +58,10 @@
     ```sh
     docker push us.gcr.io/<PROJECT_ID>/imagename:tag
     ```
+    <p>
+    <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/gcr.png">
+    </p>
+
 - Test the application using docker.
     ```sh
     docker run -d -p 3000:80 us.gcr.io/<PROJECT_ID>/imagename:tag
