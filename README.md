@@ -24,6 +24,11 @@
     ```sh
     gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
     ```
+
+    You will get above command easily by clicking on Connect button inside the GKE Cluster.
+      <p>
+  <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/connect.png">
+  </p>
 - Write Dockerfile for the application
     ```Dockerfile
     FROM  centos:latest
