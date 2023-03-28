@@ -8,7 +8,9 @@
 # Steps
 - Create a kubernetes cluster on GCP Console.
 
-  You can easily create the GKE cluster by login to the GCP console and click on Kubenetes Engine. Click on Create button.
+  You can easily create the GKE cluster by login to the GCP console and click on Kubenetes Engine. 
+  
+  Click on Create button.
   <p>
   <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/GKE1.png">
   </p>
