@@ -115,6 +115,9 @@
     kubectl get svc
     ```
 - Check the external IP of the service in the browser.
+  <p>
+  <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/UI.png">
+  </p>
 
 ### Cleanup
 ```sh
