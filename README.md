@@ -130,7 +130,7 @@
   <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/UI.png">
   </p>
 
-### Cleanup
+### Cleanup :
 ```sh
 kubectl delete -f deploy.yml
 kubectl delete -f service.yml
