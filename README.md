@@ -54,7 +54,7 @@
     ```sh
     gcloud auth configure-docker
     ```
-- Push docker image to GCR(Google Container Registry)
+- Push docker image to Google Container Registry.
     ```sh
     docker push us.gcr.io/<PROJECT_ID>/imagename:tag
     ```
