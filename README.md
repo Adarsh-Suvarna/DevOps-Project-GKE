@@ -12,6 +12,12 @@
   <p>
   <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/GKE1.png">
   </p>
+
+  Now click on USE A SETUP GUIDE option and click on My First Cluster and this helps you to easily create a GKE Cluster.
+  Click on Create Now button and wait for few minutes and your GKE cluster will be ready!
+  <p>
+  <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/GKE2.png">
+  </p>
 - Setup Connection to created GKE cluster in with your local machine or cloud shell.
     ```sh
     gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
