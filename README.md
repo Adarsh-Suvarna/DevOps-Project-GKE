@@ -10,8 +10,8 @@
 
   You can easily create the GKE cluster by login to the GCP console and click on Kubenetes Engine and click on Create.
   <p>
-<img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/GKE1.png" height="36" width="36">
-</p>
+  <img src="https://github.com/Adarsh-Suvarna/DevOps-Project-1/blob/main/image/GKE1.png">
+  </p>
 - Setup Connection to created GKE cluster in with your local machine or cloud shell.
     ```sh
     gcloud container clusters get-credentials <CLUSTER_NAME> --zone <ZONE> --project <PROJECT_ID>
